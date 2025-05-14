@@ -40,4 +40,28 @@ public class ProductRepoImpl implements ProductRepo {
         }
         return products;
     }
+
+    @Override
+    public boolean addProduct(Product product) {
+        Connection conn = null;
+        CallableStatement callSt = null;
+        try {
+            conn = ConnectionDB.openConnection();
+            callSt = conn.prepareCall("{call add_product(?, ?, ?, ?)}");
+
+            callSt.setString(1, product.getProduct_name());
+            callSt.setString(2, product.getProduct_description());
+            callSt.setDouble(3, product.getProduct_price());
+            callSt.setInt(4, product.getProduct_quantity());
+
+            callSt.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            e.fillInStackTrace();
+        } finally {
+            ConnectionDB.closeConnection(conn, callSt);
+        }
+        return false;
+    }
+
 }

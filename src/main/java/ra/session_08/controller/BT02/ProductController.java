@@ -18,6 +18,6 @@ public class ProductController {
     public String findAll(Model model) {
         List<Product> products = productService.findAll();
         model.addAttribute("products", products);
-        return "product";
-    }
+            return "product";
+        }
 }

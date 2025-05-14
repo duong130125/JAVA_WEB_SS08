@@ -1,16 +1,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: DUONG
-  Date: 14/05/2025
-  Time: 5:23 CH
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <html>
 <head>
-    <meta charset="UTF-8">
     <title>Danh sách sản phẩm</title>
+    <meta charset="UTF-8">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -45,25 +38,12 @@
         tr:hover {
             background-color: #f1f1f1;
         }
-        .total-value {
-            font-weight: bold;
-            text-align: right;
-            margin-top: 20px;
-            font-size: 18px;
-        }
-        .product-link {
-            color: #007bff;
-            text-decoration: none;
-        }
-        .product-link:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
 <div class="container">
     <h1>Danh sách sản phẩm</h1>
-
+    <a href="product-add">Thêm mới sản phẩm</a>
     <table>
         <thead>
         <tr>

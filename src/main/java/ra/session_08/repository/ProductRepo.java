@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface ProductRepo {
     List<Product> findAll();
+    boolean addProduct(Product product);
 }
